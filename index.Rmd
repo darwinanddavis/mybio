@@ -94,9 +94,9 @@ PhD, Computational Biology, University of Melbourne
 <!-- ________________________________________________________ slide break -->
 ---
 
-<img src="img/cebra.jpg", height=200, width=200, align="center">
-<img src="img/vu.jpeg", height=200, width=200, align="center">
-<img src="img/emory.png", height=200, width=200, align="right">
+<img src="img/cebra.jpg", height=200, align="center">
+<img src="img/vu.jpeg", height=200 align="center">
+<img src="img/emory.png", height=200, align="right">
 
 <!-- ________________________________________________________ slide break -->
 ## Places I've lived {data-background="black"}  
@@ -104,7 +104,7 @@ PhD, Computational Biology, University of Melbourne
 <!-- ________________________________________________________ slide break -->
 ## {data-background="#262626"} 
 
-```{r,out.width="100%"}
+```{r,out.width=params$width,out.height=params$height,warning=F,message=F}
 require(leaflet)  
 require(dplyr)
 
