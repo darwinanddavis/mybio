@@ -74,12 +74,21 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 <!-- ____________________________________________________________________________ -->
 <!-- start body -->
 
+---  
+
+<a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a>
+
+
+
 ## {data-background-iframe="https://darwinanddavis.github.io/conference_sites/"}
 
 
-<!-- ---   -->
+---
+<html>
+<body>
 
-<!-- <a href="leaflet_test.html" title="Leaflet full page">Leaflet full page</a> -->
+</body>
+</html>
 
 ---
 
@@ -151,8 +160,8 @@ map <- gcIntermediate(latlon_matrix[1,],
                    color = colv,
                    fillColor = colv,
                    popup=paste0("<br>",mp$name,"<br>"),
-                   popupOptions = 
-                     popupOptions(closeButton = T,autoPan = T),
+                   # popupOptions = 
+                   #   popupOptions(closeButton = T,autoPan = T),
                    label=paste(site_names),
                    labelOptions = 
                      labelOptions(textsize = "20px",opacity = 0.5)
