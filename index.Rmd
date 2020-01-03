@@ -57,9 +57,6 @@ suppressPackageStartupMessages(
 
 ```
 
-<!-- ________________________________________________________ slide break -->
----
-
 ```{r,echo=F,results='hide'}
 require(RCurl)
 require(RColorBrewer)
@@ -77,9 +74,12 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 <!-- ____________________________________________________________________________ -->
 <!-- start body -->
 
----  
+## {data-background-iframe="https://darwinanddavis.github.io/conference_sites/"}
 
-<a href="leaflet_test.html" title="About Me">About Me</a>
+
+<!-- ---   -->
+
+<!-- <a href="leaflet_test.html" title="Leaflet full page">Leaflet full page</a> -->
 
 ---
 
