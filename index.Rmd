@@ -10,6 +10,7 @@ params:
 output:
   revealjs::revealjs_presentation:
     css: style/styles.css
+    js: js/reveal.js
     theme: simple #default moon night black sky
     highlight: pygments
     incremental: true
@@ -70,25 +71,31 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
   plot_it_gg("black","white") # same as above for ggplot 
 ```
 
-
 <!-- ____________________________________________________________________________ -->
 <!-- start body -->
 
----  
+<!-- <a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a> -->
 
-<a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a>
+--- 
 
 
+This should be visible 
 
-## {data-background-iframe="https://darwinanddavis.github.io/conference_sites/"}
+
+## {data-background-iframe="https://darwinanddavis.github.io/conference_sites"}
+
+
+## {data-background-iframe="https://darwinanddavis.github.io/dv2/dv2.html" data-background-iframe="https://darwinanddavis.github.io/dv/bg_black.html"}
+
+
 
 
 ---
-<html>
-<body>
+<!-- <html> -->
+<!-- <body> -->
 
-</body>
-</html>
+<!-- </body> -->
+<!-- </html> -->
 
 ---
 
@@ -207,20 +214,21 @@ map
 <!-- p <- p + facet_wrap(~ ControlDay_names,nrow=length(me_day_names), ncol=1, drop= F, labeller=label_parsed) # use for adding facet labels -->
 <!-- # p <-p + facet_wrap(facet1, nrow=3, ncol=1, drop= F) -->
 <!-- p <- p + scale_y_continuous(breaks = unique(yy), labels = me_im_names, trans = "reverse") -->
-<!-- p <- p + scale_x_continuous(breaks = seq(0,max(xx),30), expand =c(0,2))  -->
+<!-- p <- p + scale_x_continuous(breaks = seq(0,max(xx),30), expand =c(0,2)) -->
 <!-- p <- p + geom_segment(aes(x = 152, xend = 152, y= 4, yend= 4), -->
 <!--                       arrow=arrow(length=unit(0.2,"cm"))) -->
-<!-- p <- p + theme_calc() +  -->
+<!-- p <- p + theme_calc() + -->
 <!--   theme(text = element_text(size=18)) + -->
 <!--   # labs(title= paste0("Density of ",ttl, " by ",subttl), y=ylab, x=xlab) + -->
 <!--   labs(title = paste0("\n","\n",ttl), y=ylab, x=xlab,size=3) + -->
 <!--   theme(plot.title = element_text(vjust=-7)) + -->
 <!--   theme(legend.position = "bottom",legend.direction = "horizontal") + -->
 <!--   theme(legend.text = element_text(size=12)) + -->
-<!--   plot_it_gg("black","white")  -->
+<!--   plot_it_gg("black","white") -->
 <!-- ggplotly(p) -->
 
 <!-- ``` -->
+
 
 <!-- ________________________________________________________ slide break -->
 # Why I make a great data storyteller  
@@ -250,7 +258,7 @@ I also enjoy presenting and have given invited seminars here ...
 <!-- ________________________________________________________ slide break -->
 ---
 
-**Click on locations to see seminar titles**  
+<small> **Click on locations to see seminar titles** </small>    
 ```{r,out.width=params$width,out.height=params$height,warning=F,message=F}
 require(leaflet)  
 require(dplyr)
