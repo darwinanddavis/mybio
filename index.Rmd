@@ -77,6 +77,10 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 <!-- ____________________________________________________________________________ -->
 <!-- start body -->
 
+---  
+
+<a href="leaflet_test.html" title="About Me">About Me</a>
+
 ---
 
 <br> 
@@ -96,7 +100,10 @@ PhD, Computational Biology, University of Melbourne
 
 <img src="img/cebra.jpg", height=200, align="center">
 <img src="img/vu.jpeg", height=200 align="center">
-<img src="img/emory.png", height=200, align="right">
+<img src="img/emory.png", height=200, align="center">
+<br>  
+<img src="img/ee.jpeg"", width=400, height=400, align="center">
+<img src="img/wv.png"", width=400, height=400, align="center">
 
 <!-- ________________________________________________________ slide break -->
 ## Places I've lived {data-background="black"}  
@@ -122,6 +129,7 @@ library(geosphere) # for flight arc paths
 latlon_matrix <- matrix(c(mp[,"lon"],mp[,"lat"]),ncol=2)
 custom_tile <- "http://d.sm.mapstack.stamen.com/((darkmatter,$00ffff[hsl-color]),(mapbox-water,$00589c[hsl-color]),(parks,$ff9a30[source-in]))/{z}/{x}/{y}.png"
 
+
 par(bg="black")
 colv <- "orange"
 opac <- 0.5
@@ -133,7 +141,7 @@ map <- gcIntermediate(latlon_matrix[1,],
                sp=TRUE) %>% 
   leaflet() %>% 
   setView(setview[2],setview[1],zoom=2) %>% 
-  addTiles(custom_tile) %>% 
+  addTiles() %>% 
   addCircleMarkers(mp[,"lon"],
                    mp[,"lat"],
                    radius = 10,
@@ -142,12 +150,12 @@ map <- gcIntermediate(latlon_matrix[1,],
                    opacity = opac,
                    color = colv,
                    fillColor = colv,
-                   label=paste("\n",site_names),
+                   popup=paste0("<br>",mp$name,"<br>"),
                    popupOptions = 
                      popupOptions(closeButton = T,autoPan = T),
+                   label=paste(site_names),
                    labelOptions = 
-                     labelOptions(textsize = "20px",opacity = 0.5),
-                   popup=paste0("<br>",mp$name,"<br>")
+                     labelOptions(textsize = "20px",opacity = 0.5)
                    ) %>%
   # addProviderTiles(
   #   "CartoDB.DarkMatter"
@@ -160,6 +168,7 @@ map
 # names(providers)
 
 ```
+
 
 <!-- ```{r,out.width=params$width,out.height=params$height,warning=F,message=F} -->
 <!-- resource_type <- "detritus" -->
@@ -204,52 +213,101 @@ map
 
 <!-- ``` -->
 
+<!-- ________________________________________________________ slide break -->
+# Why I make a great data storyteller  
 
 <!-- ________________________________________________________ slide break -->
-## Some skills I've picked up {data-background="black"}    
-
-<!-- ________________________________________________________ slide break -->
----
-
-- R/Rmd   
-- Linux  
-- git/Github  
-- Python  
-- MATLAB  
-- HTML  
-- CSS  
-- XML  
-- plotly  
-- LaTeX  
-- Netlogo  
-
-
-**In 2010**, I worked at World Vision Australia as a climate policy researcher  
-
-<img src="img/wv.png",width=400, height=400, align="right">  
-
-<br> 
-
-I developed and published National Adaptation Programmes of Action (NAPAs) for climate risk areas in Mozambique and Tanzania, Africa.  
-
+## Communication {data-background="#000000"}
 
 <!-- ________________________________________________________ slide break -->
 ---
 
-Then in 2011 I become President of Embrace Education, a not-for-profit organisation teaching literacy and math to refugee and disadvantaged youths in schools throughout Melbourne, Australia. 
+I've published both [technical](www.researchgate.com/mattmalishev) ...      
+
+<img src="img/ee.jpeg"", width=400, height=400, align="right">
+
+<!-- ________________________________________________________ slide break -->
+---  
+
+... and [non-technical](www.plusones.com) pieces.     
 
 <img src="img/ee.jpeg"", width=400, height=400, align="right">
 
 <!-- ________________________________________________________ slide break -->
 ---
 
-In 2012, I started my PhD in ecological modelling.   
+I also enjoy presenting and have given invited seminars here ...  
+
+<!-- ________________________________________________________ slide break -->
+---
+
+**Click on locations to see seminar titles**  
+```{r,out.width=params$width,out.height=params$height,warning=F,message=F}
+require(leaflet)  
+require(dplyr)
+
+setview <- c(9.145000,40.489674)
+mc <- data.frame(
+  "name" = c("Melbourne","Auckland","Texel","Cartagena","Salzburg"),
+  "lat" = c(-37.813629,52.370216,51.339695,6.244203,33.748997),
+  "lon" = c(144.963058,4.895168,12.373075,-75.581215,-84.387985),
+  "year" = c(2012,2013,2015,2017,2019),
+  # "conference" = readr::read_lines("conference_talks.txt")
+  "conference" = c(rep("ISEM2019",5))
+)
+# write.csv(mp,"/Users/malishev/Documents/Data/reveal_test/reveal_test/data/mp.csv")
+
+library(leaflet)
+library(geosphere) # for flight arc paths 
+
+latlon_matrix <- matrix(c(mc[,"lon"],mc[,"lat"]),ncol=2)
+custom_tile <- "http://d.sm.mapstack.stamen.com/((darkmatter,$00ffff[hsl-color]),(mapbox-water,$00589c[hsl-color]),(parks,$ff9a30[source-in]))/{z}/{x}/{y}.png"
 
 
-I built simulation models based on metabolic theory of energy and mass balances to forecast dispersal of animals in space and time under climate change. Think model building, data mining and analysis, lots of math and stats, and even more writing.  
+par(bg="black")
+colv <- "orange"
+opac <- 0.5
+site_names <- mc$conference
+map <- gcIntermediate(latlon_matrix[1,],
+                      latlon_matrix[2,],
+               n=100, 
+               addStartEnd=TRUE,
+               sp=TRUE) %>% 
+  leaflet() %>% 
+  setView(setview[2],setview[1],zoom=2) %>% 
+  addTiles() %>% 
+  addCircleMarkers(mc[,"lon"],
+                   mc[,"lat"],
+                   radius = 10,
+                   stroke = TRUE,
+                   weight = 3, 
+                   opacity = opac,
+                   color = colv,
+                   fillColor = colv,
+                   popup=paste0("<br>",mc$conference,"<br>"),
+                   popupOptions = 
+                     popupOptions(closeButton = T,autoPan = T),
+                   label=paste(site_names),
+                   labelOptions = 
+                     labelOptions(textsize = "20px",opacity = 0.5)
+                   ) %>%
+  # addProviderTiles(
+  #   "CartoDB.DarkMatter"
+  #   # "Stamen.TonerLite"
+  #   ) %>%
+  addPolylines(
+               color = colv,
+               opacity = opac)
+map
+# names(providers)
 
-<br> 
+```
 
+<!-- ________________________________________________________ slide break -->
+---  
+
+<!-- ________________________________________________________ slide break -->
+## I love great data viz {data-background="#000000"}
 
 <!-- ________________________________________________________ slide break -->
 ## {data-transition="fade" data-background=#00589C}
@@ -260,14 +318,28 @@ Then I relocated to the Helmholtz UFZ in Leipzig, Germany, to work in spatial si
 
 
 <!-- ________________________________________________________ slide break -->
----
-
-and I presented seminars and gave invited talks about my work here ...  
+## Tech stuff {data-background="#000000"}
 
 <!-- ________________________________________________________ slide break -->
 ---
 
-(map of conference locations)  
+I've picked up these hard skills  
+
+- R/Rmd   
+- Linux  
+- git/Github  
+- Python  
+- MATLAB  
+- HTML  
+- CSS  
+- XML  
+- plotly
+- LaTeX  
+
+<!-- ________________________________________________________ slide break -->
+---
+
+## {data-background-iframe='https://darwinanddavis.github.io/EmoRyCodingClub/index.html'}
 
 <!-- ________________________________________________________ slide break -->
 ---  
@@ -292,8 +364,6 @@ Freelance copy-editor, Uni-edit
 
 ## Modelling and number crunching 
 
-## Data viz  
-
 ## Building research tools  
 
 
@@ -302,10 +372,6 @@ Freelance copy-editor, Uni-edit
 ---
 
 spatial
-
----
-
-## {data-background-iframe='https://darwinanddavis.github.io/EmoRyCodingClub/index.html'}
 
 ---
 

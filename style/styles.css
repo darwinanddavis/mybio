@@ -46,7 +46,7 @@
     -o-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;
 }*/
-
+/*
 .reveal .leaflet-container {
     font: 12px/1.5 "Roboto Condensed", Arial, Helvetica, sans-serif;
 }
@@ -61,12 +61,12 @@
 
 
 .reveal .leaflet-container .leaflet-label-content {
-    margin: 20px 25px;
-    line-height: 3.5;
+    margin: 5px 5px;
+    line-height: 1.5;
     color: orange;
+    padding: 5px;
 }
 
-/* ____________________ popups */
 
 .reveal .leaflet-container .leaflet-popup-tip-container {
     margin: 0 auto;
@@ -104,4 +104,4 @@
     font-size: 14px;
     width: 100%;
     box-shadow: none;
-}
+}*/
