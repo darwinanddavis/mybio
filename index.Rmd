@@ -1,16 +1,17 @@
 ---
 title: "Matt Malishev"
-author: "A biosketch"
-date: "@darwinanddavis"
+author: "### **A biosketch**"
+date: "<p> @darwinanddavis </p>"
+img: "img/mm.png"
 params:
     width: 1000 
     height: 700
-    github_repo: "https://raw.githubusercontent.com/darwinanddavis/reveal_test/"
 # autosize: true
+header-includes: \usepackage{float}
+always_allow_html: yes
 output:
   revealjs::revealjs_presentation:
     css: style/styles.css
-    js: js/reveal.js
     theme: simple #default moon night black sky
     highlight: pygments
     incremental: true
@@ -27,6 +28,8 @@ output:
       # fig_height: 10
       # showNotes: true
       previewLinks: true
+      minScale: 1.0
+      maxScale: 1.0
 ---
 
 ```{r, set-options, echo = FALSE, cache = FALSE}
@@ -37,16 +40,17 @@ knitr::opts_chunk$set(
  message = F,  # mask all messages
  warning = F, # mask all warnings 
  out.width="100%",
- size="small",
- knitr::opts_chunk$set(fig.pos = 'H') # holds fig position when rendering 
+ size="small", # set code chunk size, 
+ knitr::opts_chunk$set(fig.pos = 'H')
 )
+# options(width = 2000)
 # get device output size
 # dev.size("px")
 ```
 
 <!-- install packages -->
 ```{r, load packages, include=T, cache=F, message=F, warning=F, results='hide',echo=F}
-packages <- c("ggplot2","dplyr","tidyverse","zoo","RColorBrewer","viridis","plyr","leaflet","plotly","widgetframe","geosphere")   
+packages <- c("ggplot2","dplyr","tidyverse","zoo","RColorBrewer","viridis","plyr","leaflet","plotly","widgetframe","geosphere","lubridate","ggthemes","gridExtra","crosstalk")  
 if (require(packages)) {
     install.packages(packages,dependencies = T)
     require(packages)
@@ -54,11 +58,10 @@ if (require(packages)) {
 suppressPackageStartupMessages(
   lapply(packages,library,character.only=T) 
 )
+
+# update packages 
 # update.packages(ask = FALSE, checkBuilt = TRUE)
 
-```
-
-```{r,echo=F,results='hide'}
 require(RCurl)
 require(RColorBrewer)
 require(dplyr)
@@ -69,6 +72,7 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
   cat("plot_it( \n0 for presentation, 1 for manuscript, \nset colour for background, \nset colour palette 1. use 'display.brewer.all()', \nset colour palette 2. use 'display.brewer.all()', \nset alpha for colour transperancy, \nset font style \n)")
   plot_it(0,"blue","Set3","Spectral",0.8,"") # set plot function params       
   plot_it_gg("black","white") # same as above for ggplot 
+
 ```
 
 <!-- ____________________________________________________________________________ -->
@@ -76,165 +80,74 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 
 <!-- <a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a> -->
 
---- 
+<!-- ________________________________________________________ slide break -->
+<br>
+<br>
+<br>
+<br>
 
+<p class="small">Best viewed in Chrome</p>
+<p class="small">Press `F` for fullscreen </p>
 
-This should be visible 
+<!-- ________________________________________________________ slide break -->
+# {data-background="img/dv3.png" data-background-size="99.99%" data-background-repeat="repeat"} 
 
-
-## {data-background-iframe="https://darwinanddavis.github.io/conference_sites"}
-
-
-## {data-background-iframe="https://darwinanddavis.github.io/dv2/dv2.html" data-background-iframe="https://darwinanddavis.github.io/dv/bg_black.html"}
-
-
-
-
----
-<!-- <html> -->
-<!-- <body> -->
-
-<!-- </body> -->
-<!-- </html> -->
-
----
+<!-- ________________________________________________________ slide break -->
+---  
 
 <br> 
 <br>
 
-### **Born:** Melbourne, Australia  
+<img src="img/mm.png",width=300, height=300, align="right">
+
+### **Born:** 
+Melbourne, Australia  
+
 ### **Education:**  
-<br>  
-BSc (Hons), Monash University, Melbourne  
-PhD, Computational Biology, University of Melbourne  
+PhD, Computational Biology, University of Melbourne    
+BSc (Hons), Monash University  
+
+### **Interests**  
+Cartography, data viz, writing  
 
 <!-- ________________________________________________________ slide break -->
-## Some places I've worked {data-background="black"}
+# Places I've lived 
 
 <!-- ________________________________________________________ slide break -->
----
+# {data-background-iframe="https://darwinanddavis.github.io/dv2/dv2.html"}
+
+<!-- ________________________________________________________ slide break -->
+# Places I've worked
 
 <img src="img/cebra.jpg", height=200, align="center">
 <img src="img/vu.jpeg", height=200 align="center">
 <img src="img/emory.png", height=200, align="center">
 <br>  
 <img src="img/ee.jpeg"", width=400, height=400, align="center">
-<img src="img/wv.png"", width=400, height=400, align="center">
+<img src="img/wv.png"", width=400, height=400, align="center">  
 
 <!-- ________________________________________________________ slide break -->
-## Places I've lived {data-background="black"}  
+# Why I make a great data storyteller 
 
 <!-- ________________________________________________________ slide break -->
-## {data-background="#262626"} 
+---
 
-```{r,out.width=params$width,out.height=params$height,warning=F,message=F}
-require(leaflet)  
-require(dplyr)
-
-setview <- c(9.145000,40.489674)
-mp <- data.frame(
-  "name" = c("Melbourne","Amsterdam","Leipzig","Medellin","Atlanta"),
-  "lat" = c(-37.813629,52.370216,51.339695,6.244203,33.748997),
-  "lon" = c(144.963058,4.895168,12.373075,-75.581215,-84.387985)
-)
-# write.csv(mp,"/Users/malishev/Documents/Data/reveal_test/reveal_test/data/mp.csv")
-
-library(leaflet)
-library(geosphere) # for flight arc paths 
-
-latlon_matrix <- matrix(c(mp[,"lon"],mp[,"lat"]),ncol=2)
-custom_tile <- "http://d.sm.mapstack.stamen.com/((darkmatter,$00ffff[hsl-color]),(mapbox-water,$00589c[hsl-color]),(parks,$ff9a30[source-in]))/{z}/{x}/{y}.png"
-
-
-par(bg="black")
-colv <- "orange"
-opac <- 0.5
-site_names <- mp$name
-map <- gcIntermediate(latlon_matrix[1,],
-                      latlon_matrix[2,],
-               n=100, 
-               addStartEnd=TRUE,
-               sp=TRUE) %>% 
-  leaflet() %>% 
-  setView(setview[2],setview[1],zoom=2) %>% 
-  addTiles() %>% 
-  addCircleMarkers(mp[,"lon"],
-                   mp[,"lat"],
-                   radius = 10,
-                   stroke = TRUE,
-                   weight = 3, 
-                   opacity = opac,
-                   color = colv,
-                   fillColor = colv,
-                   popup=paste0("<br>",mp$name,"<br>"),
-                   # popupOptions = 
-                   #   popupOptions(closeButton = T,autoPan = T),
-                   label=paste(site_names),
-                   labelOptions = 
-                     labelOptions(textsize = "20px",opacity = 0.5)
-                   ) %>%
-  # addProviderTiles(
-  #   "CartoDB.DarkMatter"
-  #   # "Stamen.TonerLite"
-  #   ) %>%
-  addPolylines(
-               color = colv,
-               opacity = opac)
-map
-# names(providers)
-
-```
-
-
-<!-- ```{r,out.width=params$width,out.height=params$height,warning=F,message=F} -->
-<!-- resource_type <- "detritus" -->
-<!-- memi_df <- readr::read_csv("https://github.com/darwinanddavis/reveal_test/raw/master/data/memi_df.csv") -->
-<!-- memi_df <- data.frame(memi_df) -->
-<!-- # heatmap ----------------------------------------------------------------- -->
-<!-- require(viridis) -->
-<!-- require(ggthemes) -->
-<!-- require(plotly) -->
-
-<!-- me_day_vec <- c("skip30","skip60","skip90","skip120") -->
-<!-- me_day_names <- as.factor(c("Skip~30", "Skip~60", "Skip~90", "Skip120")) # char vec for labelling facets -->
-
-<!-- ttl <- "" -->
-<!-- subttl = "" -->
-<!-- xlab <- "Time (days)" -->
-<!-- ylab <- "Control intensity" -->
-<!-- # turn names into function for labeller for facets -->
-<!-- me_im_names <- c("No control","50%", "75%", "90%", "95%", "99%") -->
-<!-- dens <- memi_df[,"Cercs"] -->
-<!-- yy <- memi_df[,"ControlImpact"] -->
-<!-- xx <- memi_df[,"Time"] -->
-<!-- facet1 <- memi_df[,"ControlDay"] -->
-<!-- p <- ggplot(memi_df,aes(x=xx,y=yy,fill=dens)) + -->
-<!--   geom_tile(colour= "gray",size=0.01, width=2, linetype = 0) + -->
-<!--   scale_fill_viridis(name="Density",option ="magma") -->
-<!-- p <- p + facet_wrap(~ ControlDay_names,nrow=length(me_day_names), ncol=1, drop= F, labeller=label_parsed) # use for adding facet labels -->
-<!-- # p <-p + facet_wrap(facet1, nrow=3, ncol=1, drop= F) -->
-<!-- p <- p + scale_y_continuous(breaks = unique(yy), labels = me_im_names, trans = "reverse") -->
-<!-- p <- p + scale_x_continuous(breaks = seq(0,max(xx),30), expand =c(0,2)) -->
-<!-- p <- p + geom_segment(aes(x = 152, xend = 152, y= 4, yend= 4), -->
-<!--                       arrow=arrow(length=unit(0.2,"cm"))) -->
-<!-- p <- p + theme_calc() + -->
-<!--   theme(text = element_text(size=18)) + -->
-<!--   # labs(title= paste0("Density of ",ttl, " by ",subttl), y=ylab, x=xlab) + -->
-<!--   labs(title = paste0("\n","\n",ttl), y=ylab, x=xlab,size=3) + -->
-<!--   theme(plot.title = element_text(vjust=-7)) + -->
-<!--   theme(legend.position = "bottom",legend.direction = "horizontal") + -->
-<!--   theme(legend.text = element_text(size=12)) + -->
-<!--   plot_it_gg("black","white") -->
-<!-- ggplotly(p) -->
-
-<!-- ``` -->
-
+### Data viz  
 
 <!-- ________________________________________________________ slide break -->
-# Why I make a great data storyteller  
+# {data-background="img/dv1.png" data-background-size="99.99% 99.99%" data-background-repeat="repeat"} 
 
 <!-- ________________________________________________________ slide break -->
-## Communication {data-background="#000000"}
+# {data-background="img/dv2.png" data-background-size="99.99%" data-background-repeat="repeat"} 
+
+# {data-background-iframe="https://darwinanddavis.github.io/mybio/dv1.html"}
+
+# {data-background-iframe="https://darwinanddavis.github.io/mybio/dv2.html"}
+
+<!-- ________________________________________________________ slide break -->
+---
+
+### Communication
 
 <!-- ________________________________________________________ slide break -->
 ---
@@ -259,7 +172,7 @@ I also enjoy presenting and have given invited seminars here ...
 ---
 
 <small> **Click on locations to see seminar titles** </small>    
-```{r,out.width=params$width,out.height=params$height,warning=F,message=F}
+```{r}
 require(leaflet)  
 require(dplyr)
 

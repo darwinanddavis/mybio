@@ -9,16 +9,48 @@
     z-index:1;
 }
 
+.reveal .small {
+  font-size: 50%;
+  text-align: center;
+}
+
 .blackbg {
   background: black;
   background-color: black; 
 }
 
-.reveal section h2 {
-  color: #f66a0a;
-  vertical-align: center;
+.reveal section h1 {
+  color: black;
   text-align: center; 
-  font-family: Roboto Condensed;
+  font-family: Optima;
+  font-size: 3.5em; 
+}
+
+.reveal section h2 {
+  color: black;
+  vertical-align: center;
+  text-align: left; 
+ font-family: Optima;
+}
+
+.reveal section h3,
+.reveal section h4 {
+  color: #2a1a9d;
+  text-align: left;
+ }
+
+.reveal section h5 {
+  font-size: 1em;
+}
+
+.reveal section p {
+  text-align: left;
+  font-family: Optima;
+  color: black;
+}
+
+.imgincrement {
+	color: white;
 }
 
 .reveal section img { 
@@ -27,26 +59,18 @@
   box-shadow:none; 
   }
 
-.reveal section p {
-	text-align: left;
-	font-family: Roboto;
-	color: orange;
-}
-  
-.reveal h1,
-.reveal h3,
-.reveal h4,
-.reveal h5 {
-  color: black;
-  text-align: left;
- }
+/*blur background images */
+/*.backgrounds {
+     -webkit-filter: blur(5px);
+     -moz-filter: blur(50px);
+     -o-filter: blur(5px);
+     -ms-filter: blur(5px);
+     filter: blur(5px);
+ }*/
 
-.reveal h1 {
-  font-size: 4.77em; 
-}
-
-.imgincrement {
-	color: white;
+.reveal .intro {
+  background-position: center;
+  background-size: 10%;
 }
 
 
