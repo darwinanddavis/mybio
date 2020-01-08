@@ -20,6 +20,7 @@ output:
     background-transition: slide
     mathjax: local # null
     self_contained: false
+    slide_level: 1
     # reveal_plugins: ["notes", "search", "zoom", "chalkboard"] # ALT + mouseclick to zoom
     reveal_options:
       slideNumber: true
@@ -81,6 +82,8 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 <!-- <a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a> -->
 
 <!-- ________________________________________________________ slide break -->
+---  
+
 <br>
 <br>
 <br>
@@ -90,9 +93,7 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 <p class="small">Press `F` for fullscreen </p>
 
 <!-- ________________________________________________________ slide break -->
-# {data-background="img/dv3.png" data-background-size="99.99%" data-background-repeat="repeat"} 
 
-<!-- ________________________________________________________ slide break -->
 ---  
 
 <br> 
@@ -114,25 +115,41 @@ Cartography, data viz, writing
 # Places I've lived 
 
 <!-- ________________________________________________________ slide break -->
-# {data-background-iframe="https://darwinanddavis.github.io/dv2/dv2.html"}
+# {data-background-iframe="https://darwinanddavis.github.io/mybio/map1.html"}
 
 <!-- ________________________________________________________ slide break -->
-# Places I've worked
 
-<img src="img/cebra.jpg", height=200, align="center">
+# Places I've worked    
+
+<!-- ________________________________________________________ slide break -->
+
+---    
+
+<img src="img/cebra.jpg", width=350, height=200, align="left">
 <img src="img/vu.jpeg", height=200 align="center">
-<img src="img/emory.png", height=200, align="center">
+<img src="img/ufz.jpeg", height=200, align="center">
 <br>  
-<img src="img/ee.jpeg"", width=400, height=400, align="center">
-<img src="img/wv.png"", width=400, height=400, align="center">  
+<img src="img/uom.png", height=200, align="center">
+<img src="img/wv3.png", align="center">
+<img src="img/emory.png", height=200, align="center">
 
 <!-- ________________________________________________________ slide break -->
+
 # Why I make a great data storyteller 
 
 <!-- ________________________________________________________ slide break -->
----
 
-### Data viz  
+---    
+
+### Data analysis  
+
+I love turning this
+
+```{r,echo=T,eval=T}
+readr::read_csv("data/ds.csv") %>% str
+```
+
+<center> **into this ...** </center>
 
 <!-- ________________________________________________________ slide break -->
 # {data-background="img/dv1.png" data-background-size="99.99% 99.99%" data-background-repeat="repeat"} 
@@ -145,167 +162,27 @@ Cartography, data viz, writing
 # {data-background-iframe="https://darwinanddavis.github.io/mybio/dv2.html"}
 
 <!-- ________________________________________________________ slide break -->
+
 ---
 
 ### Communication
 
+<br>
+
+I have 10 years experience as a freelance copy-editor and have edited 400+ documents to date across ~175 journals. 
+
+I've also published both technical and non-technical pieces, including research articles, book chapters, blog posts, policy documents, and annual reports ...        
 <!-- ________________________________________________________ slide break -->
----
 
-I've published both [technical](www.researchgate.com/mattmalishev) ...      
-
-<img src="img/ee.jpeg"", width=400, height=400, align="right">
-
-<!-- ________________________________________________________ slide break -->
----  
-
-... and [non-technical](www.plusones.com) pieces.     
-
-<img src="img/ee.jpeg"", width=400, height=400, align="right">
-
-<!-- ________________________________________________________ slide break -->
----
-
-I also enjoy presenting and have given invited seminars here ...  
-
-<!-- ________________________________________________________ slide break -->
----
-
-<small> **Click on locations to see seminar titles** </small>    
-```{r}
-require(leaflet)  
-require(dplyr)
-
-setview <- c(9.145000,40.489674)
-mc <- data.frame(
-  "name" = c("Melbourne","Auckland","Texel","Cartagena","Salzburg"),
-  "lat" = c(-37.813629,52.370216,51.339695,6.244203,33.748997),
-  "lon" = c(144.963058,4.895168,12.373075,-75.581215,-84.387985),
-  "year" = c(2012,2013,2015,2017,2019),
-  # "conference" = readr::read_lines("conference_talks.txt")
-  "conference" = c(rep("ISEM2019",5))
-)
-# write.csv(mp,"/Users/malishev/Documents/Data/reveal_test/reveal_test/data/mp.csv")
-
-library(leaflet)
-library(geosphere) # for flight arc paths 
-
-latlon_matrix <- matrix(c(mc[,"lon"],mc[,"lat"]),ncol=2)
-custom_tile <- "http://d.sm.mapstack.stamen.com/((darkmatter,$00ffff[hsl-color]),(mapbox-water,$00589c[hsl-color]),(parks,$ff9a30[source-in]))/{z}/{x}/{y}.png"
+# {data-background-iframe='https://www.ncbi.nlm.nih.gov/pubmed/27624673'}
 
 
-par(bg="black")
-colv <- "orange"
-opac <- 0.5
-site_names <- mc$conference
-map <- gcIntermediate(latlon_matrix[1,],
-                      latlon_matrix[2,],
-               n=100, 
-               addStartEnd=TRUE,
-               sp=TRUE) %>% 
-  leaflet() %>% 
-  setView(setview[2],setview[1],zoom=2) %>% 
-  addTiles() %>% 
-  addCircleMarkers(mc[,"lon"],
-                   mc[,"lat"],
-                   radius = 10,
-                   stroke = TRUE,
-                   weight = 3, 
-                   opacity = opac,
-                   color = colv,
-                   fillColor = colv,
-                   popup=paste0("<br>",mc$conference,"<br>"),
-                   popupOptions = 
-                     popupOptions(closeButton = T,autoPan = T),
-                   label=paste(site_names),
-                   labelOptions = 
-                     labelOptions(textsize = "20px",opacity = 0.5)
-                   ) %>%
-  # addProviderTiles(
-  #   "CartoDB.DarkMatter"
-  #   # "Stamen.TonerLite"
-  #   ) %>%
-  addPolylines(
-               color = colv,
-               opacity = opac)
-map
-# names(providers)
-
-```
-
-<!-- ________________________________________________________ slide break -->
----  
-
-<!-- ________________________________________________________ slide break -->
-## I love great data viz {data-background="#000000"}
-
-<!-- ________________________________________________________ slide break -->
-## {data-transition="fade" data-background=#00589C}
-
-Then I relocated to the Helmholtz UFZ in Leipzig, Germany, to work in spatial simulation modelling.    
-
-<img src="img/ufz.jpg", width=350, height=200, align="center">
+# {data-background-iframe="https://darwinanddavis.github.io/mybio/map2.html"}
 
 
 <!-- ________________________________________________________ slide break -->
-## Tech stuff {data-background="#000000"}
 
-<!-- ________________________________________________________ slide break -->
----
-
-I've picked up these hard skills  
-
-- R/Rmd   
-- Linux  
-- git/Github  
-- Python  
-- MATLAB  
-- HTML  
-- CSS  
-- XML  
-- plotly
-- LaTeX  
-
-<!-- ________________________________________________________ slide break -->
----
-
-## {data-background-iframe='https://darwinanddavis.github.io/EmoRyCodingClub/index.html'}
-
-<!-- ________________________________________________________ slide break -->
----  
-
-**Nowadays**    
-
-I’m a computational researcher at Emory University with a background in simulation modelling.   
-
-<br>  
-
-I work on a bunch of diverse data projects ranging from forecasting human disease risk to bioenergetics modelling to spatial modelling of species ranges.    
-
-Freelance copy-editor, Uni-edit      
-
-
-<!-- ## {data-background=#000}  -->
-## {data-transition="fade"}
-
-
-<!-- __________ heading __________   -->
-## <br> <br> Here are some of things I'm interested in ... {data-background="#000000"}     
-
-## Modelling and number crunching 
-
-## Building research tools  
-
-
-## Some of my projects  
-
----
-
-spatial
-
----
-
-disease (joyplots)
+# {data-background-iframe='https://darwinanddavis.github.io/EmoRyCodingClub/index.html'}
 
 
 

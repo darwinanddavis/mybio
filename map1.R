@@ -37,9 +37,9 @@ mp <- data.frame(
 
 latlon_matrix <- matrix(c(mp[,"lon"],mp[,"lat"]),ncol=2)
 # custom_tile <- "http://d.sm.mapstack.stamen.com/((darkmatter,$00ffff[hsl-color]),(mapbox-water,$00589c[hsl-color]),(parks,$ff9a30[source-in]))/{z}/{x}/{y}.png"
-custom_tile <- "http://c.sm.mapstack.stamen.com/(darkmatter,(mapbox-water,$291C9C[hsl-color]),(parks,$3BCDD5[hsl-color]))/{z}/{x}/{y}.png"
+custom_tile <- "http://c.sm.mapstack.stamen.com/(positron,(mapbox-water,$3BCDD5[hsl-color]),(parks,$291C9C[hsl-color]))/{z}/{x}/{y}.png"
 
-colv <- "#3BCDD5"
+colv <- "#291C9C"
 opac <- 1
 site_names <- mp$name
 map <- leaflet() %>% 
@@ -53,12 +53,12 @@ map <- leaflet() %>%
                    opacity = opac,
                    color = colv,
                    fillColor = colv,
-                   popup=paste0("<br/>",mp$name,"<br/>"),
+                   # popup=paste0("<br/>",mp$name,"<br/>"),
                    # popupOptions = 
                    #   popupOptions(closeButton = T,autoPan = T),
                    label=paste(site_names),
                    labelOptions = 
-                     labelOptions(textsize = "20px",opacity = 0.5)
+                     labelOptions(textsize = "20px",opacity = 0.7)
   ) %>% 
   addControl(title, position = "topleft", className="map-title")
 map
