@@ -487,10 +487,11 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section>
     <h1 class="title">Matt Malishev</h1>
-    <h2 class="author"><h3 id="a-biosketch"><strong>A biosketch</strong></h3></h2>
-    <h3 class="date"><p>
-<span class="citation" data-cites="darwinanddavis">@darwinanddavis</span>
-</p></h3>
+    <h2 class="author"><div style="color:#2a1a9d;">
+<center>
+<strong>A biosketch</strong>
+</center>
+</div></h2>
 </section>
 
 <section class="slide level1">
@@ -499,26 +500,25 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <!-- ____________________________________________________________________________ -->
 <!-- start body -->
 <!-- <a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a> -->
-<h2 id="section"><!-- ________________________________________________________ slide break --></h2>
-<p><br> <br> <br> <br></p>
+<!-- ________________________________________________________ slide break -->
 <p class="small">
-Best viewed in Chrome
-</p>
-<p class="small">
-Press <code>F</code> for fullscreen
+Best viewed in Chrome<br />
+Press <code>F</code> for fullscreen Slides are interactive
 </p>
 <!-- ________________________________________________________ slide break -->
 </section>
+<section id="section" class="slide level1" data-background="img/dv2.png" data-background-size="contain" data-background-repeat="repeat">
+<h1></h1>
+</section>
 <section class="slide level1">
 
-<p><br> <br></p>
-<p><img src="img/mm.png",width=300, height=300, align="right"></p>
-<h3 id="born"><strong>Born:</strong></h3>
+<p><img src="img/mm.png",width=350, height=350, align="right"></p>
+<h3 id="born">Born</h3>
 <p>Melbourne, Australia</p>
-<h3 id="education"><strong>Education:</strong></h3>
+<h3 id="education">Education</h3>
 <p>PhD, Computational Biology, University of Melbourne<br />
 BSc (Hons), Monash University</p>
-<h3 id="interests"><strong>Interests</strong></h3>
+<h3 id="interests">Interests</h3>
 <p>Cartography, data viz, writing</p>
 <!-- ________________________________________________________ slide break -->
 </section>
@@ -537,7 +537,7 @@ BSc (Hons), Monash University</p>
 <section class="slide level1">
 
 <p><img src="img/cebra.jpg", width=350, height=200, align="left"> <img src="img/vu.jpeg", height=200 align="center"> <img src="img/ufz.jpeg", height=200, align="center"> <br><br />
-<img src="img/uom.png", height=200, align="center"> <img src="img/wv3.png", align="center"> <img src="img/emory.png", height=200, align="center"></p>
+<img src="img/uom.png", height=200, align="center"> <img src="img/wv.png", align="center"> <img src="img/emory.png", height=200, align="center"></p>
 <!-- ________________________________________________________ slide break -->
 </section>
 <section id="why-i-make-a-great-data-storyteller" class="slide level1">
@@ -595,18 +595,40 @@ BSc (Hons), Monash University</p>
 <h3 id="communication">Communication</h3>
 <p><br></p>
 <p>I have 10 years experience as a freelance copy-editor and have edited 400+ documents to date across ~175 journals.</p>
-<p>I’ve also published both technical and non-technical pieces, including research articles, book chapters, blog posts, policy documents, and annual reports …<br />
-<!-- ________________________________________________________ slide break --></p>
+<p>I’ve also published both technical and non-technical pieces, including research articles, book chapters, blog posts, policy documents, and annual reports …</p>
+<!-- ________________________________________________________ slide break -->
 </section>
 <section id="section-6" class="slide level1" data-background-iframe="https://www.ncbi.nlm.nih.gov/pubmed/27624673">
 <h1></h1>
 </section>
-<section id="section-7" class="slide level1" data-background-iframe="https://darwinanddavis.github.io/mybio/map2.html">
+<section id="section-7" class="slide level1" data-background-iframe="https://scholar.google.com.au/citations?hl=en&amp;user=m3MVeUMAAAAJ&amp;view_op=list_works&amp;gmla=AJsN-F58EZe-Cdjk9fe0sjf29ud3SqYLqrNoorVRY1JwBUfNmg5S3qBFrgj8LGcSzn8kthUXY089QBXRRQQ5I-4NieyUoif4UXjJbF0Af_I4qG2j0lYgjvs">
+<h1></h1>
+</section>
+<section id="section-8" class="slide level1" data-background-iframe="https://theplusones.com/melbourne/2017/03/24/koyaanisqatsi-live-philip-glass-ensemble/">
+<h1></h1>
+</section>
+<section class="slide level1">
+
+<p>… and given invited seminars on research and data analysis here …</p>
+</section>
+<section id="section-9" class="slide level1" data-background-iframe="https://darwinanddavis.github.io/mybio/map2.html">
 <h1></h1>
 <!-- ________________________________________________________ slide break -->
 </section>
-<section id="section-8" class="slide level1" data-background-iframe="https://darwinanddavis.github.io/EmoRyCodingClub/index.html">
+<section id="some-of-my-data-science-projects" class="slide level1">
+<h1>Some of my data science projects</h1>
+<!-- ________________________________________________________ slide break -->
+</section>
+<section id="section-10" class="slide level1" data-background-iframe="https://darwinanddavis.github.io/EmoRyCodingClub/index.html">
 <h1></h1>
+</section>
+<section id="section-11" class="slide level1" data-background-iframe="https://darwinanddavis.github.io/DataPortfolio/">
+<h1></h1>
+</section>
+<section class="slide level1">
+
+<h3 id="thanks-for-playing">Thanks for playing</h3>
+<p><br> <img src="img/contact.png", height=200></p>
 <!-- end body -->
 <!-- ____________________________________________________________________________ -->
 </section>
@@ -626,7 +648,7 @@ BSc (Hons), Monash University</p>
         // Push each slide change to the browser history
         history: true,
         // Vertical centering of slides
-        center: false,
+        center: true,
         // Opens links in an iframe preview overlay
         previewLinks: true,
         // Transition style

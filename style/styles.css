@@ -73,6 +73,17 @@
   background-size: 10%;
 }
 
+/*change title slide 
+<style>
+.slide-background:first-child {
+  background-color: #00FF00;
+}
+</style>*/
+
+.reveal .ttl {
+  color: red;
+}
+
 
 /*.reveal .leaflet-container .leaflet-fade-anim .leaflet-tile, .reveal .leaflet-container .leaflet-fade-anim .leaflet-popup {
     -webkit-transition: opacity 0.2s linear;
