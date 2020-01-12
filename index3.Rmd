@@ -81,8 +81,20 @@ plot_it_gg("black","white") # same as above for ggplot
   
   <!-- <a href="https://darwinanddavis.github.io/conference_sites/" title="Should work">Work</a> -->
 
----   
-  
+<p class="small">
+Best viewed in Chrome  
+Press `F` for fullscreen
+</p>
+
+---
+
+Go through and write down the slide numbers for plots that, when viewed in full screen, are cut off on any of the margins. 
+
+Slide numbers precede the plots. 
+
+
+
+
 
 ---
 
@@ -199,3 +211,7 @@ plot_it_gg("black","white") # same as above for ggplot
 {data-background="img/dv2.png" data-background-size="auto auto" data-background-repeat="repeat" data-background-position="center"} 
 
 ## {data-background="img/dv2.png" data-background-size="99.99% 99.99%" data-background-repeat="repeat" data-background-position="center"} 
+
+
+
+## Thanks, G.
