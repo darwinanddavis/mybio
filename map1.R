@@ -43,7 +43,7 @@ colv <- "#291C9C"
 opac <- 1
 site_names <- mp$name
 map <- leaflet() %>% 
-  setView(setview[2],setview[1],zoom=2) %>% 
+  setView(0,0,zoom=2) %>% 
   addTiles(custom_tile) %>% 
   addCircleMarkers(mp[,"lon"],
                    mp[,"lat"],

@@ -152,7 +152,7 @@ readr::read_csv("data/ds.csv") %>% str
 # {data-background="img/dv1.png" data-background-size="99.99% 99.99%" data-background-repeat="repeat"} 
 
 <!-- ________________________________________________________ slide break -->
-# {data-background="img/dv2.png" data-background-size="99.99%" data-background-repeat="repeat"} 
+# {data-background="img/dv2.png" data-background-size="99.99% 99.99%" data-background-repeat="no-repeat"} 
 
 # {data-background-iframe="https://darwinanddavis.github.io/mybio/dv1.html"}
 

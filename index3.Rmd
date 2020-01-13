@@ -86,6 +86,8 @@ Best viewed in Chrome
 Press `F` for fullscreen
 </p>
 
+3, 8, 13, and 14 are optimal, e.g. data-background-size="99.99% 99.99%"
+
 ---
 
 Go through and write down the slide numbers for plots that, when viewed in full screen, are cut off on any of the margins. 
