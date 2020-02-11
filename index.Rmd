@@ -92,8 +92,6 @@ Slides are interactive
 
 <!-- ________________________________________________________ slide break -->
 
-# {data-background="img/dv2.png" data-background-size="contain" data-background-repeat="repeat"} 
-
 ---    
 
 <img src="img/mm.png",width=350, height=350, align="right">

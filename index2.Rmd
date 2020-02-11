@@ -11,7 +11,7 @@ header-includes: \usepackage{float}
 always_allow_html: yes
 output:
   revealjs::revealjs_presentation:
-    css: style/styles.css
+    css: style/styles2.css
     theme: simple #default moon night black sky
     highlight: pygments
     incremental: true
@@ -78,7 +78,6 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
 
 
 ```{css}
-# override z index
 .reveal .backgrounds {
     z-index:0;
 }
@@ -87,6 +86,88 @@ script <- getURL("https://raw.githubusercontent.com/darwinanddavis/plot_it/maste
     z-index:0;
 }
 ```
+
+---
+
+### Peer review articles
+
+<div class="small"> 
+
+- **Malishev M** & Civitello DJ (2019) Linking bioenergetics and parasite transmission models suggests mismatch between snail host density and production of human schistosomes. Integrative and Comparative Biology, iz385, [https://doi.org/10.1093/icb/icz058](https://academic.oup.com/icb/advance-article-abstract/doi/10.1093/icb/icz058/5497795?redirectedFrom=fulltext).      
+
+- Kearney MR, Munns SL, Moore D, **Malishev M** & Bull CM (2018) Field tests of a general ectotherm niche model show how water can limit lizard activity and distribution. Ecological Monographs. 88(4): 672–693, [https://doi.org/10.1002/ecm.1326](https://www.semanticscholar.org/paper/Field-tests-of-a-general-ectotherm-niche-model-show-Kearney-Munns/51effb47636b8c450f1f6575631b327d5428ccd6).           
+
+- **Malishev M**, Bull CM & Kearney MR (2018) An individual-based model of ectotherm movement integrating metabolic and microclimatic constraints. Methods in Ecology and Evolution. 9(3): 472–489, [doi:https://doi.org/10.1111/2041-210X.12909](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12909).      
+
+- Fraser H, Soanes K, Jones C, Jones S & **Malishev M** (2017) The value of virtual conferencing for ecology and conservation. Conservation Biology. 31(3): 540–546, [doi: 10.1111/cobi.12837.](https://www.ncbi.nlm.nih.gov/pubmed/27624673).   
+Sperfeld E, Wagner ND, Halvorson HM, **Malishev M** & Raubenheimer D (2017) Bridging Ecological Stoichiometry and Nutritional Geometry with homeostasis concepts and integrative models of organism nutrition. Functional Ecology. 31(2): 286–296, [https://doi.org/10.1111/1365-2435.12707](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2435.12707).       
+
+Sperfeld E, Halvorson HM, **Malishev M**, Clissold F & Wagner ND (2016) Woodstoich III: Integrating tools of Nutritional Geometry and Ecological Stoichiometry to advance element budgeting and the prediction of consumer-driven nutrient recycling. Oikos. 125: 1539–1553, [https://doi.org/10.1111/oik.03529](https://onlinelibrary.wiley.com/doi/full/10.1111/oik.03529).     
+
+**Malishev M** & Sanson GD (2015) Leaf mechanics and herbivory defence: how tough tissue along the leaf body deters growing insect herbivores. Austral Ecology, 40: 300–308, [doi:10.1111/aec.12214](https://onlinelibrary.wiley.com/doi/pdf/10.1111/aec.12214).      
+
+</div>
+
+---  
+
+### In review articles   
+
+<div class="small">
+
+**Malishev M** & Civitello DJ. Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes.   
+
+**Malishev M** & Kramer-Schadt S. Movement, models, and metabolism: Individual-based energy budgets as next-generation extensions for modelling animal movement across scales. 
+
+Ezenwa V, Civitello DJ, Barton B, Becker D, Brenn-White M, Classen A, Deem S, Johnson Z, Kutz S, **Malishev M**, Penczykowski R, Preston D, Vannatta TJ & Koltz AM. Infectious diseases, livestock and methane: an impending vicious cycle? 
+
+</div>
+
+---  
+
+### Book chapters
+
+<div class="small">
+
+- **Malishev M** (2017) How to Master Punctuation in Academic English Writing? In How to Fix your Academic English and Publish your Research Faster. Eds. Ozy Abram et al. [Amazon link](https://www.amazon.com/dp/1979972664/sr=8-6/qid=1513401279/ref=olp_product_details?_encoding=UTF8&me=&qid=1513401279&sr=8-6).    
+
+- **Malishev M** (2017) The Secrets to Selecting a Target Journal and Publishing Faster. ——— [Amazon Link](https://www.amazon.com/dp/B078H278VZ).      
+
+- **Malishev M** (2017) Insider Info on Editing, Writing, and Publishing your Research. ——— [Amazon link](https://www.amazon.com/dp/B078HCP3LY).      
+
+- Complete book found at [Uni-Edit press](http://uni-edit.press/en/).   
+
+</div>
+
+---  
+
+
+<!-- ________________________________________________________ slide break -->
+
+## Published works
+
+<body>
+<section style="blackbg">
+
+Peer review articles (*Awarded article, ^Equal contribution)
+Malishev M & Civitello DJ. Modelling how resource competition among snail hosts affects the mollusciciding frequency and intensity needed to control human schistosomes. In review.
+Malishev M & Kramer-Schadt S. Movement, models, and metabolism: Individual-based energy budgets as next-generation extensions for modelling animal movement across scales. In review.
+Ezenwa V, Civitello DJ, Barton B, Becker D, Brenn-White M, Classen A, Deem S, Johnson Z, Kutz S, Malishev M, Penczykowski R, Preston D, Vannatta TJ & Koltz AM. Infectious diseases, livestock and methane: an impending vicious cycle? In review. 
+Malishev M & Civitello DJ (2019) Linking bioenergetics and parasite transmission models suggests mismatch between snail host density and production of human schistosomes. Integrat. Compar. Biol. 59(5): 1243–1252.
+Kearney MR, Munns SL, Moore D, Malishev M & Bull CM (2018) Field tests of a general ectotherm niche model show how water can limit lizard activity and distribution. Ecological Monographs. 88(4): 672–693.
+Malishev M*, Bull CM & Kearney MR (2018) An individual-based model of ectotherm movement integrating metabolic and microclimatic constraints. Methods in Ecology and Evolution. 9(3): 472–489.
+Fraser H, Soanes K, Jones C, Jones S & Malishev M (2017) The value of virtual conferencing for ecology and conservation. Conservation Biology. 31(3): 540–546.
+Sperfeld E, Wagner ND*, Halvorson HM^, Malishev M^ & Raubenheimer D (2017) Bridging Ecological Stoichiometry and Nutritional Geometry with homeostasis concepts and integrative models of organism nutrition. Functional Ecology. 31(2): 286–296. 
+Sperfeld E^, Halvorson HM^, Malishev M, Clissold F & Wagner ND (2016) Woodstoich III: Integrating tools of Nutritional Geometry and Ecological Stoichiometry to advance element budgeting and the prediction of consumer-driven nutrient recycling. Oikos. 125: 1539–1553. 
+Malishev M & Sanson GD (2015) Leaf mechanics and herbivory defence: how tough tissue along the leaf body deters growing insect herbivores. Austral Ecology, 40: 300–308.
+
+Book chapters
+Malishev M (2017) How to Master Punctuation in Academic English Writing? In How to Fix your Academic English and Publish your Research Faster. Eds. Ozy Abram et al. http://uni-edit.press/en/
+Malishev M (2017) The Secrets to Selecting a Target Journal and Publishing Faster. ———
+Malishev M (2017) Insider Info on Editing, Writing, and Publishing your Research. ———
+
+</section>
+</body>
+
 
 
 <!-- ____________________________________________________________________________ -->
@@ -118,15 +199,6 @@ BSc (Hons), Monash University
 
 ### Interests  
 Cartography, data viz, writing  
-
-<!-- ________________________________________________________ slide break -->
-
----    
-
-Published works  
-
-* **Malishev M** & Civitello DJ (2019) Linking bioenergetics and parasite transmission models suggests mismatch between snail host density and production of human schistosomes. Integrative and Comparative Biology, iz385, [https://doi.org/10.1093/icb/icz058](https://academic.oup.com/icb/advance-article-abstract/doi/10.1093/icb/icz058/5497795?redirectedFrom=fulltext). 
-
 
 
 

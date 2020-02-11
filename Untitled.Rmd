@@ -1,0 +1,55 @@
+---
+# title: "<br> Matt Malishev"
+# author: "<div style=\"color:#2a1a9d;\"> <center> **A biosketch** </center> </div>"
+# date:
+# img: "img/mm.png"
+params:
+    width: 1000 
+    height: 700
+# autosize: true
+header-includes: \usepackage{float}
+always_allow_html: yes
+output:
+  revealjs::revealjs_presentation:
+    css: style/styles2.css
+    theme: simple #default moon night black sky
+    highlight: pygments
+    incremental: true
+    center: false
+    transition: slide
+    background-transition: slide
+    mathjax: local # null
+    self_contained: false
+    slide_level: 1
+    # reveal_plugins: ["notes", "search", "zoom", "chalkboard"] # ALT + mouseclick to zoom
+    reveal_options:
+      slideNumber: true
+      fig_caption: true
+      # fig_width: 10
+      # fig_height: 10
+      # showNotes: true
+      previewLinks: true
+      minScale: 1.0
+      maxScale: 1.0
+---
+
+
+<!-- ________________________________________________________ slide break -->
+
+---   
+
+## {data-background=#f66a0a} 
+
+<div>
+<center> 
+
+## Matt Malishev 
+
+### A (second) biosketch
+
+<img src="img/mm.png",width=350, height=350, align="right">
+
+</center>
+</div>
+
+
